@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Pedido Confirmado | GORÓ DA MANSÃO</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Hanken+Grotesk:wght@400;700&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "primary": "#ffffff",
+                      "inverse-primary": "#506600",
+                      "on-primary-container": "#556d00",
+                      "tertiary-container": "#00fbfb",
+                      "surface-variant": "#353534",
+                      "on-secondary-fixed-variant": "#810081",
+                      "on-surface": "#e5e2e1",
+                      "surface-tint": "#abd600",
+                      "surface": "#131313",
+                      "on-tertiary-fixed-variant": "#004f4f",
+                      "on-surface-variant": "#c4c9ac",
+                      "error": "#ffb4ab",
+                      "secondary-fixed": "#ffd7f5",
+                      "primary-fixed-dim": "#abd600",
+                      "inverse-on-surface": "#313030",
+                      "on-secondary": "#5b005b",
+                      "secondary": "#ffabf3",
+                      "secondary-fixed-dim": "#ffabf3",
+                      "primary-fixed": "#c3f400",
+                      "surface-container": "#201f1f",
+                      "tertiary": "#ffffff",
+                      "surface-container-highest": "#353534",
+                      "background": "#131313",
+                      "on-primary-fixed-variant": "#3c4d00",
+                      "tertiary-fixed-dim": "#00dddd",
+                      "secondary-container": "#fe00fe",
+                      "on-secondary-fixed": "#380038",
+                      "inverse-surface": "#e5e2e1",
+                      "outline-variant": "#444933",
+                      "on-error": "#690005",
+                      "surface-container-low": "#1c1b1b",
+                      "primary-container": "#c3f400",
+                      "surface-container-lowest": "#0e0e0e",
+                      "on-tertiary-fixed": "#002020",
+                      "on-background": "#e5e2e1",
+                      "surface-container-high": "#2a2a2a",
+                      "on-secondary-container": "#500050",
+                      "on-error-container": "#ffdad6",
+                      "on-tertiary-container": "#007070",
+                      "surface-bright": "#3a3939",
+                      "on-primary-fixed": "#161e00",
+                      "error-container": "#93000a",
+                      "outline": "#8e9379",
+                      "on-primary": "#283500",
+                      "tertiary-fixed": "#00fbfb",
+                      "on-tertiary": "#003737",
+                      "surface-dim": "#131313"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "gutter": "16px",
+                      "container-padding": "20px",
+                      "section-gap": "120px",
+                      "element-gap": "24px"
+              },
+              "fontFamily": {
+                      "label-mono": ["JetBrains Mono"],
+                      "headline-lg-mobile": ["Anton"],
+                      "body-lg": ["Hanken Grotesk"],
+                      "body-md": ["Hanken Grotesk"],
+                      "headline-xl": ["Anton"],
+                      "headline-lg": ["Anton"]
+              },
+              "fontSize": {
+                      "label-mono": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                      "headline-lg-mobile": ["36px", {"lineHeight": "36px", "fontWeight": "400"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "headline-xl": ["72px", {"lineHeight": "72px", "letterSpacing": "0.02em", "fontWeight": "400"}],
+                      "headline-lg": ["48px", {"lineHeight": "48px", "letterSpacing": "0.02em", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.1);
+        }
+        .neon-glow-lime {
+            filter: drop-shadow(0 0 12px rgba(195, 244, 0, 0.5));
+        }
+        .neon-text-lime {
+            text-shadow: 0 0 8px rgba(195, 244, 0, 0.6);
+        }
+        .glossy-finish {
+            background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 50%, rgba(255,255,255,0.05) 100%);
+        }
+        .animated-bolt {
+            animation: pulse-neon 2s infinite alternate;
+        }
+        @keyframes pulse-neon {
+            0% { opacity: 0.8; transform: scale(1); filter: drop-shadow(0 0 10px rgba(195, 244, 0, 0.4)); }
+            100% { opacity: 1; transform: scale(1.05); filter: drop-shadow(0 0 25px rgba(195, 244, 0, 0.8)); }
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-body-md overflow-x-hidden">
+<!-- Background Layer -->
+<div class="fixed inset-0 z-0 opacity-20 pointer-events-none">
+<div class="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background z-10"></div>
+<img alt="Lab Background" class="w-full h-full object-cover grayscale brightness-50" src="https://lh3.googleusercontent.com/aida/ADBb0uji1DfWeLeRh4ac8df-MFz6-uceEg4Hhq4DxBu2Hl5qvRjomqgIZXzgOh2Kd-kQq-Ft4Z0Z-9GAOSo3kX_Ej1Kf89GZhQjwZQNZgIVoAgglHsHTOaw_VUHQtiu-jm9E8nRjDzoZGX0fyJg65p88S5r63KLFb_cB4yEyYinUr2Bl1eLajuNWDBRTwGhXkzO4in2EhsndNNqDnVQHk1VBAt1Rt6Nse7RpVFJj7g9gVtRvc9U1rVUreBf7K8g"/>
+</div>
+<!-- Main Content Canvas -->
+<main class="relative z-10 flex-grow flex flex-col items-center justify-center px-container-padding py-12 md:py-24">
+<!-- Giant Neon Icon Section -->
+<div class="flex flex-col items-center text-center mb-element-gap">
+<div class="animated-bolt mb-6">
+<span class="material-symbols-outlined text-[120px] md:text-[180px] text-primary-fixed neon-glow-lime" data-icon="bolt" style="font-variation-settings: 'FILL' 1;">bolt</span>
+</div>
+<h1 class="font-headline-lg-mobile md:font-headline-xl text-headline-lg-mobile md:text-headline-xl text-primary-fixed neon-text-lime tracking-tighter mb-2">
+                SABOR ENERGÉTICO GARANTIDO
+            </h1>
+<div class="font-label-mono text-label-mono text-primary-fixed/60 flex items-center gap-2 mb-8">
+<span class="w-2 h-2 rounded-full bg-primary-fixed animate-ping"></span>
+                PEDIDO #GM-420-{{Math.floor(Math.random() * 9000) + 1000}}
+            </div>
+</div>
+<!-- Order Summary Glass Card -->
+<div class="w-full max-w-2xl glass-card rounded-xl overflow-hidden relative mb-element-gap">
+<div class="glossy-finish absolute inset-0 pointer-events-none"></div>
+<div class="p-8 space-y-8">
+<!-- Delivery Status -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-white/5 pb-6">
+<div>
+<p class="font-label-mono text-label-mono text-on-surface-variant uppercase tracking-widest mb-1">Previsão de Entrega</p>
+<p class="font-headline-lg text-primary text-[32px]">15 - 25 MIN</p>
+</div>
+<div class="text-right">
+<span class="inline-flex items-center px-3 py-1 bg-primary-fixed text-on-primary-fixed font-label-mono text-[10px] rounded-full font-bold">
+                            REDUÇÃO DE DANOS ATIVA
+                        </span>
+</div>
+</div>
+<!-- Charge Summary -->
+<div>
+<h3 class="font-label-mono text-label-mono text-on-surface-variant uppercase tracking-widest mb-4">Resumo da Carga</h3>
+            <div id="conf-items-list" class="space-y-4 mb-6"></div>
+            <div class="flex justify-between items-center pt-4 border-t border-white/10 mb-6">
+                <span class="font-headline-lg text-[18px] text-white">TOTAL PAGO</span>
+                <span class="font-headline-lg text-[24px] text-primary-fixed-dim" id="conf-total">R$ 0,00</span>
+            </div>
+            <div class="mt-4 p-4 bg-white/5 rounded-xl border border-white/5">
+                <p class="font-label-mono text-[11px] text-on-surface-variant">
+                    CLIENTE: <span class="text-primary font-bold" id="conf-nome">Cliente</span><br/>
+                    ENTREGA EM: <span class="text-primary font-bold">Endereço Cadastrado</span><br/>
+                    DATA: <span id="conf-data" class="text-primary">Data</span>
+                </p>
+            </div>
+            <!-- Progress Bar Mock -->
+<div class="pt-4">
+<div class="flex justify-between text-[10px] font-label-mono text-on-surface-variant mb-2 uppercase">
+<span>Preparação</span>
+<span>Rota</span>
+<span class="text-primary-fixed">Chegada</span>
+</div>
+<div class="h-1 w-full bg-white/10 rounded-full flex overflow-hidden">
+<div class="h-full bg-primary-fixed w-1/3 shadow-[0_0_10px_rgba(195,244,0,0.5)]"></div>
+<div class="h-full bg-white/20 w-2/3"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Button -->
+<div class="w-full max-w-2xl flex flex-col items-center gap-6">
+<button class="w-full py-6 bg-primary-fixed text-on-primary-fixed font-headline-lg-mobile text-headline-lg-mobile uppercase tracking-tighter hover:scale-[1.02] active:scale-95 transition-all duration-300 shadow-[0_0_30px_rgba(195,244,0,0.3)] hover:shadow-[0_0_50px_rgba(195,244,0,0.5)] flex items-center justify-center gap-4">
+                RASTREAR ENERGIA
+                <span class="material-symbols-outlined text-[32px]" data-icon="radar">radar</span>
+</button>
+<a class="font-label-mono text-label-mono text-on-surface-variant hover:text-primary-fixed transition-colors underline underline-offset-4 decoration-primary-fixed/30" href="/index.html">VOLTAR PARA A HOME
+            </a>
+</div>
+</main>
+<!-- Footer Segment -->
+<footer class="relative z-10 w-full border-t border-white/5 bg-surface-container-lowest/50 backdrop-blur-md">
+<div class="max-w-7xl mx-auto px-container-padding py-8 flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="font-label-mono text-[10px] text-on-surface-variant tracking-[0.2em]">
+                © 2024 GORÓ DA MANSÃO. DRINK RESPONSIBLY.
+            </div>
+<div class="flex gap-8">
+<span class="material-symbols-outlined text-on-surface-variant/40 hover:text-primary-fixed cursor-pointer transition-colors" data-icon="verified_user">verified_user</span>
+<span class="material-symbols-outlined text-on-surface-variant/40 hover:text-primary-fixed cursor-pointer transition-colors" data-icon="fitness_center">fitness_center</span>
+<span class="material-symbols-outlined text-on-surface-variant/40 hover:text-primary-fixed cursor-pointer transition-colors" data-icon="support_agent">support_agent</span>
+</div>
+</div>
+</footer>
+<!-- Atmosphere Script -->
+<script>
+        document.addEventListener('mousemove', (e) => {
+            const x = e.clientX / window.innerWidth;
+            const y = e.clientY / window.innerHeight;
+            
+            // Subtle tilt effect on the card
+            const card = document.querySelector('.glass-card');
+            const rotateY = (x - 0.5) * 4;
+            const rotateX = (y - 0.5) * -4;
+            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+        });
+    </script>
+<script src="/js/store.js"></script>
+
+<script>
+function formatBRL(val) {
+    return 'R$ ' + val.toFixed(2).replace('.', ',');
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    const raw = localStorage.getItem('goro_last_order');
+    if (!raw) {
+        document.getElementById('conf-order-id').textContent = 'NENHUM PEDIDO ENCONTRADO';
+        return;
+    }
+
+    const order = JSON.parse(raw);
+
+    document.getElementById('conf-order-id').textContent = order.id;
+    document.getElementById('conf-total').textContent = formatBRL(order.totals.total);
+    document.getElementById('conf-nome').textContent = order.nome.toUpperCase();
+    document.getElementById('conf-data').textContent = order.data;
+
+    const itemsList = document.getElementById('conf-items-list');
+    if (itemsList && order.itens) {
+        itemsList.innerHTML = order.itens.map(item => `
+            <div class="flex justify-between items-center">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center border border-white/10 overflow-hidden">
+                        <img src="${item.imagem}" alt="${item.nome}" class="w-full h-full object-contain p-1"/>
+                    </div>
+                    <div>
+                        <p class="font-body-md text-primary font-bold text-sm">${item.nome.toUpperCase()}</p>
+                        <p class="font-label-mono text-[10px] text-on-surface-variant">${item.subtitulo}</p>
+                    </div>
+                </div>
+                <p class="font-label-mono text-primary-fixed-dim text-sm">x${item.quantidade} — ${formatBRL(item.preco * item.quantidade)}</p>
+            </div>
+        `).join('');
+    }
+});
+</script>
+
+</body></html>
