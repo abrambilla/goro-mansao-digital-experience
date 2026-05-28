@@ -1,0 +1,23 @@
+{
+  "name": "goro-mansao-digital-experience",
+  "version": "1.0.0",
+  "description": "Experiência Digital Premium da Mansão do Goró - Importada do Stitch MCP",
+  "main": "index.html",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [
+    "goro",
+    "mansao",
+    "stitch",
+    "vite",
+    "premium"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "vite": "^5.2.0"
+  }
+}
