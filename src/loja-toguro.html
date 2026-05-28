@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-br"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GORÓ DA MANSÃO | Nossos Gorós</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Hanken+Grotesk:wght@400;700&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.1);
+        }
+        .neon-glow-primary {
+            filter: drop-shadow(0 0 12px rgba(171, 214, 0, 0.4));
+        }
+        .neon-glow-secondary {
+            filter: drop-shadow(0 0 12px rgba(255, 0, 255, 0.4));
+        }
+        .product-gradient {
+            background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0) 100%);
+        }
+        .horizontal-scroller::-webkit-scrollbar {
+            display: none;
+        }
+        .text-stroke {
+            -webkit-text-stroke: 1px rgba(255,255,255,0.2);
+            color: transparent;
+        }
+        .massive-text {
+            font-size: clamp(4rem, 15vw, 12rem);
+            line-height: 0.9;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed-dim": "#abd600",
+                        "surface-variant": "#353534",
+                        "on-tertiary-fixed": "#002020",
+                        "primary": "#ffffff",
+                        "outline": "#8e9379",
+                        "on-primary-container": "#556d00",
+                        "on-background": "#e5e2e1",
+                        "on-primary-fixed-variant": "#3c4d00",
+                        "background": "#131313",
+                        "error": "#ffb4ab",
+                        "surface-bright": "#3a3939",
+                        "tertiary-fixed": "#00fbfb",
+                        "surface-container-lowest": "#0e0e0e",
+                        "error-container": "#93000a",
+                        "on-tertiary": "#003737",
+                        "on-surface-variant": "#c4c9ac",
+                        "on-secondary-fixed": "#380038",
+                        "on-secondary-container": "#500050",
+                        "secondary-fixed": "#ffd7f5",
+                        "secondary": "#ffabf3",
+                        "on-primary": "#283500",
+                        "inverse-primary": "#506600",
+                        "on-tertiary-fixed-variant": "#004f4f",
+                        "surface-tint": "#abd600",
+                        "on-surface": "#e5e2e1",
+                        "on-secondary": "#5b005b",
+                        "secondary-fixed-dim": "#ffabf3",
+                        "primary-container": "#c3f400",
+                        "on-error": "#690005",
+                        "on-secondary-fixed-variant": "#810081",
+                        "inverse-surface": "#e5e2e1",
+                        "inverse-on-surface": "#313030",
+                        "primary-fixed": "#c3f400",
+                        "outline-variant": "#444933",
+                        "on-tertiary-container": "#007070",
+                        "tertiary": "#ffffff",
+                        "secondary-container": "#fe00fe",
+                        "surface-container-high": "#2a2a2a",
+                        "tertiary-fixed-dim": "#00dddd",
+                        "tertiary-container": "#00fbfb",
+                        "surface-container-highest": "#353534",
+                        "surface-container-low": "#1c1b1b",
+                        "surface-dim": "#131313",
+                        "surface-container": "#201f1f",
+                        "surface": "#131313",
+                        "on-primary-fixed": "#161e00",
+                        "on-error-container": "#ffdad6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "container-padding": "20px",
+                        "element-gap": "24px",
+                        "section-gap": "120px",
+                        "gutter": "16px"
+                    },
+                    "fontFamily": {
+                        "label-mono": ["JetBrains Mono"],
+                        "headline-lg": ["Anton"],
+                        "headline-xl": ["Anton"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "headline-lg-mobile": ["Anton"],
+                        "body-md": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "label-mono": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                        "headline-lg": ["48px", {"lineHeight": "48px", "letterSpacing": "0.02em", "fontWeight": "400"}],
+                        "headline-xl": ["72px", {"lineHeight": "72px", "letterSpacing": "0.02em", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["36px", {"lineHeight": "36px", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background selection:bg-primary-fixed-dim selection:text-on-primary-fixed overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="bg-surface/80 dark:bg-surface/80 backdrop-blur-xl border-b border-white/10 docked full-width top-0 sticky z-50 flex justify-between items-center px-container-padding h-16 w-full">
+<div class="flex items-center gap-4">
+<button class="text-primary-fixed-dim hover:opacity-80 transition-opacity active:scale-95 transition-transform">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<a href="/index.html"><h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary-fixed-dim drop-shadow-[0_0_8px_rgba(171,214,0,0.6)] uppercase">GORÓ DA MANSÃO</h1></a>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden md:flex gap-8">
+<a class="font-label-mono text-label-mono uppercase text-primary-fixed-dim hover:opacity-80" href="/manifesto.html">Manifesto</a>
+<a class="font-label-mono text-label-mono uppercase text-on-surface-variant hover:opacity-80" href="/lab.html">Lab</a>
+<a class="font-label-mono text-label-mono uppercase text-on-surface-variant hover:opacity-80" href="/loja.html">Store</a>
+</div>
+<a href="/carrinho.html" class="relative active:scale-95 transition-transform"><span class="material-symbols-outlined">shopping_bag</span></a>
+</div>
+</header>
+<main>
+<!-- Hero Section / Store Header with Toguro -->
+<section class="relative min-h-screen flex flex-col justify-end px-container-padding pb-12 overflow-hidden bg-surface">
+<!-- Background Image: Toguro -->
+<div class="absolute inset-0 z-0">
+<img alt="Toguro Mansão Maromba" class="w-full h-full object-cover object-center md:object-top opacity-60 grayscale hover:grayscale-0 transition-all duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZWVcaIy8ZNLPV9afWc8nHW8CoNiBDiv22bPENtFn7PnhKUhVeE7t1ee4sUAuYjVhylxn-_0FfBm_xxet55OkwM35Y6ZdFP9R6kmfiwF4ldW03Oupdg-6dGASFLfA3T-e4e-GnM8vaiUD1cYQsTFv0RJVAxZD2YBEoURn5OLrn1d2UtiHrQCHfql3upIlSTVw63ysJb-vR77B8Q0-GdUoA7CXxRxLlT3CS3GCyRybrs6D639dYoOsyF-Zt_13mtfc3UyNhZvpURJY"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-background via-transparent to-background/40"></div>
+</div>
+<div class="max-w-7xl mx-auto w-full relative z-10">
+<div class="mb-8">
+<span class="font-label-mono text-label-mono uppercase text-primary-fixed-dim tracking-[0.3em] mb-4 block">Choose Your Fuel</span>
+<h2 class="font-headline-xl massive-text uppercase mb-4 text-primary leading-[0.8] tracking-tighter">
+                    SABOR <br/>
+<span class="text-primary-fixed-dim neon-glow-primary">ENERGÉTICO</span>
+</h2>
+<p class="font-body-lg text-body-lg text-on-surface max-w-xl mb-8 leading-relaxed">
+                    "O shape fala, mas o goró grita. Escolha sua munição pra noite." — <span class="text-primary-fixed-dim font-bold">TOGURO</span>
+</p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="bg-primary-fixed-dim text-on-primary-fixed font-headline-lg-mobile text-[24px] px-10 py-4 rounded-none hover:bg-white transition-colors flex items-center justify-center gap-3 uppercase italic">
+                        ABASTECER AGORA
+                        <span class="material-symbols-outlined fill-1">bolt</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Floating Label -->
+<div class="absolute right-container-padding bottom-12 hidden lg:block rotate-90 origin-right">
+<span class="font-label-mono text-[10px] text-primary-fixed-dim uppercase tracking-[1em] whitespace-nowrap opacity-50">MANSÃO MAROMBA OFFICIAL SUPPLY — NOCTURNAL DIVISION</span>
+</div>
+</section>
+<!-- Bento Catalog -->
+<section class="px-container-padding py-section-gap max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6">
+<div>
+<h3 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg uppercase mb-2">NOSSOS GORÓS</h3>
+<p class="font-label-mono text-label-mono text-on-surface-variant uppercase tracking-widest">Catálogo Expandido / Summer 24</p>
+</div>
+<div class="flex gap-4">
+<button class="px-6 py-2 border border-white/10 rounded-full font-label-mono text-[12px] uppercase hover:bg-white/5 transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">filter_list</span>
+                    Filtrar Potência
+                </button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Main Featured: Combo Extraterrestre -->
+<div class="md:col-span-8 group relative overflow-hidden glass-card rounded-3xl p-8 flex flex-col justify-between min-h-[500px]">
+<div class="relative z-10">
+<span class="inline-block px-3 py-1 bg-secondary-container text-on-secondary-container font-label-mono text-[10px] uppercase rounded-full mb-4">Mais Vendido</span>
+<h4 class="font-headline-xl text-headline-xl-mobile uppercase leading-none mb-4">COMBO <br/>EXTRATERRESTRE</h4>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xs">A experiência completa da Mansão. 3L de puro goró com kit exclusivo de redução de danos.</p>
+</div>
+<div class="absolute right-0 bottom-0 w-2/3 h-full -z-0 pointer-events-none group-hover:scale-110 transition-transform duration-700">
+<img class="w-full h-full object-contain object-right-bottom opacity-80" data-alt="A premium collection of high-end liquor bottles and bar accessories arranged on a dark reflective surface. The scene is bathed in emerald green and deep blue atmospheric lighting, with sharp highlights on the glass edges. In the center, a large matte black bottle with a glowing neon lime logo stands prominently." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyN18sudtc9moHJLxHhH77WXAJcEiLKL-khUxZd1nn_emODXfkMCpvTcCDGufT8TQOJjH91Xwn89DEht0mSYr04vx5uihPkYIKgIQX4g0bm7He93PDFYGGBVPWJ8uhrzfoLwiPDwcNuHzsalFAOzfcOmty-1CWtJG5bQ9ddp-PkcpQLTtI5tmcKTY_-oQbb68MQnKkFCY5ESA-KsxP25dslX5FSSSCBZaWjyFeRkOV2YLYiUk-YRqpMYXICaf_3o-9lIbmhw4p5YM"/>
+</div>
+<div class="relative z-10 mt-auto">
+<div class="flex items-end gap-4 mb-6">
+<span class="font-headline-lg text-headline-lg-mobile text-primary-fixed-dim">R$ 120,00</span>
+<span class="font-label-mono text-label-mono line-through opacity-40 mb-2">R$ 150,00</span>
+</div>
+<button class="bg-primary text-background px-8 py-3 rounded-xl font-headline-lg-mobile text-[18px] uppercase hover:bg-primary-fixed-dim transition-colors active:scale-95">
+                        Garanta o seu
+                    </button>
+</div>
+</div>
+<!-- Product 2: Energy Neon Lime -->
+<div class="md:col-span-4 glass-card rounded-3xl p-6 flex flex-col group">
+<div class="relative flex-1 mb-6 rounded-2xl overflow-hidden bg-surface-container-low product-gradient">
+<div class="absolute top-4 left-4 z-10">
+<span class="px-2 py-1 bg-primary-fixed-dim text-on-primary-fixed font-label-mono text-[10px] uppercase rounded">Neon Series</span>
+</div>
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A single sleek aluminum can of a functional energy drink, featuring a vibrant electric lime and deep charcoal design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_gdtWpc_ayAJ68C1Lq_4oUMHfTNWzogyUo4may8c9sZKW8foQFWEW_8RopEwngBAFkC66_LAt_yWJXFrBYe4KLG58kpI_l98ako5SElC6H3iBBF7eqe_dsCWU3DcTtsMZDFWOjP3xxpS44mtroEn5fP08YwSrjJd_rvG-3exAaSk01idf6aOPM_OVQA-_8jTEV7SqdyH3GFNpAqx6TgF1jznTWOVQA7D4sfzn86-X-O741DzYOCCz5CxjRkmqTkg31n6pJjlifuc"/>
+</div>
+<h5 class="font-headline-lg-mobile text-[24px] uppercase mb-1">Energy Neon Lime</h5>
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-primary-fixed-dim text-sm" style="font-variation-settings: 'FILL' 1;">bolt</span>
+<span class="font-label-mono text-[10px] text-on-surface-variant uppercase">Performance Boost</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-headline-lg-mobile text-[28px] text-primary">R$ 18,90</span>
+<button class="w-12 h-12 bg-surface-variant flex items-center justify-center rounded-xl hover:bg-primary-fixed-dim hover:text-on-primary-fixed transition-colors">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+<!-- Product 3: Pack 6 Latas -->
+<div class="md:col-span-4 glass-card rounded-3xl p-6 flex flex-col group">
+<div class="relative flex-1 mb-6 rounded-2xl overflow-hidden bg-surface-container-low product-gradient">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A modern, industrial-style cardboard carrier containing six slim cans of functional beverages." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAPHnOmCwCXF36KJS4e5HrraToHjZpcw1apq3vFt8Y2aR98on20LHYRm3s4okX3kfEPUuYJrRBM4vmt8B3-Hyhnee2y4STLRUd37KXzq-IYYswDYWlhHniHReCET6jdOvO0-xaRzx9CDtkBw8Ao9ru2AfaEYOs2fgCaEWYn9SsUg1p0LLQ93_7pzBlqrbfEMjWtoQe2kgDxVNZ6_J-BaKiqV_LIHRi0pmvF8jrWB457oKTq9Z2fkU0sgaU6dB2NrSncNN_9vjCiZg"/>
+</div>
+<h5 class="font-headline-lg-mobile text-[24px] uppercase mb-1">Pack 6 Latas</h5>
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-secondary text-sm">groups</span>
+<span class="font-label-mono text-[10px] text-on-surface-variant uppercase">Squad Approved</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-headline-lg-mobile text-[28px] text-primary">R$ 99,00</span>
+<button class="w-12 h-12 bg-surface-variant flex items-center justify-center rounded-xl hover:bg-primary-fixed-dim hover:text-on-primary-fixed transition-colors">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+<!-- Product 4: Goró RTD Clássico -->
+<div class="md:col-span-8 glass-card rounded-3xl p-8 grid md:grid-cols-2 gap-8 items-center group">
+<div class="relative aspect-square rounded-2xl overflow-hidden bg-surface-container-low">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A focused close-up of a ready-to-drink (RTD) cocktail bottle with a premium textured label." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqox67aeZK5qMFnRul8pKIv0T-Du-gpFerGPq0WpiUcpy5MfjluQy-saNnsQrUgzB0JmsxGna7meDAWJYEY4HRVoAp_agHZdEGfFvMxOdkcS12rkbBZj7zmbCfQ3Z1PVFJEgf6jq9seKOnbZt940Xd45erIrlCWbbqK18Fe2Gqxngl_oejUaSWO3odVzqP8fvIllvm6yrh0NWqbnQcNW_4GvLfckTSNr8Supd_nO8jwQeRpByHG3N938gE2EkS4_TV_IKe65PApts"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent"></div>
+</div>
+<div>
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-primary-fixed-dim">verified</span>
+<span class="font-label-mono text-label-mono uppercase">Harm Reduction Certified</span>
+</div>
+<h4 class="font-headline-lg text-headline-lg-mobile uppercase mb-2">Goró RTD <br/>Clássico</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">A base perfeita para sua noite. Blend exclusivo Mansão Maromba com teor alcoólico balanceado e mix vitamínico.</p>
+<div class="flex items-center justify-between">
+<span class="font-headline-xl text-[48px] text-primary-fixed-dim">R$ 24,50</span>
+<button class="bg-primary text-background px-6 py-2 rounded-xl font-label-mono uppercase hover:bg-primary-fixed-dim transition-colors">
+                            Adicionar
+                        </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Sabor Energético Feature -->
+<section class="relative bg-surface-container-lowest py-section-gap overflow-hidden">
+<div class="absolute left-0 w-full h-px bg-white/10 top-0"></div>
+<div class="max-w-7xl mx-auto px-container-padding text-center">
+<h3 class="font-headline-xl text-headline-xl-mobile uppercase mb-12 opacity-10 tracking-widest leading-none">SABOR ENERGÉTICO SABOR ENERGÉTICO</h3>
+<div class="relative z-10 glass-card max-w-4xl mx-auto p-12 rounded-[40px] border border-primary-fixed-dim/20">
+<span class="material-symbols-outlined text-6xl text-primary-fixed-dim mb-6" style="font-variation-settings: 'FILL' 1;">bolt</span>
+<h4 class="font-headline-lg text-headline-lg-mobile uppercase mb-6">O ÚNICO GORÓ QUE TE MANTÉM <span class="text-primary-fixed-dim">NO JOGO</span></h4>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-12">
+                    Desenvolvido em colaboração com especialistas em biohacking, nossos gorós combinam o prazer do drink com a precisão de suplementos de alta performance. Redução de danos não é opcional—é o padrão Mansão.
+                </p>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+<div>
+<p class="font-headline-lg-mobile text-[32px] text-primary leading-none">0%</p>
+<p class="font-label-mono text-[10px] uppercase text-on-surface-variant">Açúcar</p>
+</div>
+<div>
+<p class="font-headline-lg-mobile text-[32px] text-primary leading-none">100%</p>
+<p class="font-label-mono text-[10px] uppercase text-on-surface-variant">Intensidade</p>
+</div>
+<div>
+<p class="font-headline-lg-mobile text-[32px] text-primary leading-none">B12</p>
+<p class="font-label-mono text-[10px] uppercase text-on-surface-variant">Vitamin Mix</p>
+</div>
+<div>
+<p class="font-headline-lg-mobile text-[32px] text-primary leading-none">ECO</p>
+<p class="font-label-mono text-[10px] uppercase text-on-surface-variant">Aluminum Only</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Navigation Drawer -->
+<div class="fixed inset-0 z-[100] pointer-events-none opacity-0 transition-opacity duration-300" id="drawer">
+<div class="absolute inset-0 bg-black/80 backdrop-blur-sm pointer-events-auto" onclick="toggleDrawer()"></div>
+<aside class="absolute left-0 top-0 h-full w-[280px] bg-surface rounded-r-xl shadow-2xl translate-x-[-100%] transition-transform duration-300 ease-in-out pointer-events-auto flex flex-col p-6">
+<div class="mb-12">
+<div class="flex items-center gap-4 mb-8">
+<div class="w-12 h-12 rounded-full bg-primary-fixed-dim flex items-center justify-center font-headline-lg text-[20px] text-on-primary-fixed">V</div>
+<div>
+<h4 class="font-label-mono text-primary-fixed-dim uppercase text-[14px]">Nocturnal Elite</h4>
+<p class="font-label-mono text-[10px] opacity-60 uppercase">Harm Reduction: High</p>
+</div>
+</div>
+<nav class="flex flex-col gap-2">
+<a class="flex items-center gap-4 p-3 font-body-md text-primary-fixed-dim font-bold bg-primary-fixed-dim/10 rounded-lg transition-all duration-300" href="/manifesto.html"><span class="material-symbols-outlined">menu_book</span>The Manifesto
+                </a>
+<a class="flex items-center gap-4 p-3 font-body-md text-on-surface hover:bg-white/5 rounded-lg transition-all duration-300" href="/lab.html"><span class="material-symbols-outlined">science</span>Damage Reduction Lab
+                </a>
+<a class="flex items-center gap-4 p-3 font-body-md text-on-surface hover:bg-white/5 rounded-lg transition-all duration-300" href="/loja.html"><span class="material-symbols-outlined">auto_awesome</span>Premium Kits
+                </a>
+<a class="flex items-center gap-4 p-3 font-body-md text-on-surface hover:bg-white/5 rounded-lg transition-all duration-300" href="#">
+<span class="material-symbols-outlined">location_on</span>
+                    Store Locator
+                </a>
+<a class="flex items-center gap-4 p-3 font-body-md text-on-surface hover:bg-white/5 rounded-lg transition-all duration-300" href="#">
+<span class="material-symbols-outlined">support_agent</span>
+                    Support
+                </a>
+</nav>
+</div>
+<div class="mt-auto pt-6 border-t border-white/5">
+<p class="font-label-mono text-[10px] uppercase text-on-surface-variant mb-2">Status do Membro</p>
+<div class="bg-surface-variant h-1 w-full rounded-full overflow-hidden">
+<div class="bg-primary-fixed-dim h-full w-2/3"></div>
+</div>
+<p class="font-label-mono text-[10px] uppercase mt-2 text-primary-fixed-dim">Level 4</p>
+</div>
+</aside>
+</div>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center px-4 py-3 bg-background/90 backdrop-blur-2xl border-t border-white/5 shadow-[0_-10px_30px_rgba(0,0,0,0.5)] z-50">
+<a class="flex flex-col items-center justify-center text-primary-fixed-dim bg-surface-variant/30 rounded-xl px-3 py-1 active:scale-90 transition-transform" href="/loja.html">
+<span class="material-symbols-outlined">local_bar</span>
+<span class="font-label-mono text-[10px] uppercase mt-1">Shop</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary-fixed active:scale-90 transition-transform" href="/lab.html" class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary-fixed active:scale-90 transition-transform"><span class="material-symbols-outlined">bolt</span><span class="font-label-mono text-[10px] uppercase mt-1">Glow</span></a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary-fixed active:scale-90 transition-transform" href="/manifesto.html" class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary-fixed active:scale-90 transition-transform"><span class="material-symbols-outlined">groups</span><span class="font-label-mono text-[10px] uppercase mt-1">Club</span></a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary-fixed active:scale-90 transition-transform" href="/carrinho.html" class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary-fixed active:scale-90 transition-transform"><span class="material-symbols-outlined">shopping_cart</span><span class="font-label-mono text-[10px] uppercase mt-1">Pack</span></a>
+</nav>
+<script>
+    function toggleDrawer() {
+        const drawer = document.getElementById('drawer');
+        const aside = drawer.querySelector('aside');
+        if (drawer.classList.contains('pointer-events-none')) {
+            drawer.classList.remove('pointer-events-none', 'opacity-0');
+            aside.classList.remove('translate-x-[-100%]');
+        } else {
+            drawer.classList.add('pointer-events-none', 'opacity-0');
+            aside.classList.add('translate-x-[-100%]');
+        }
+    }
+
+    document.querySelector('header button span.material-symbols-outlined').parentElement.addEventListener('click', toggleDrawer);
+
+    document.addEventListener('mousemove', (e) => {
+        const cards = document.querySelectorAll('.glass-card');
+        cards.forEach(card => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            card.style.setProperty('--mouse-x', `${x}px`);
+            card.style.setProperty('--mouse-y', `${y}px`);
+        });
+    });
+</script>
+<script src="/js/store.js"></script>
+</body></html>
