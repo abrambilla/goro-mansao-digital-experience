@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Hanken+Grotesk:wght@300;400;700&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-left: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .neon-glow-primary {
+            box-shadow: 0 0 20px rgba(195, 244, 0, 0.2);
+        }
+        .neon-border-focus:focus-within {
+            border-bottom-color: #00fbfb;
+            filter: drop-shadow(0 0 5px #00fbfb);
+        }
+        body {
+            background-color: #131313;
+            color: #e5e2e1;
+            overflow-x: hidden;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#ffffff",
+                        "inverse-primary": "#506600",
+                        "on-primary-container": "#556d00",
+                        "tertiary-container": "#00fbfb",
+                        "surface-variant": "#353534",
+                        "on-secondary-fixed-variant": "#810081",
+                        "on-surface": "#e5e2e1",
+                        "surface-tint": "#abd600",
+                        "surface": "#131313",
+                        "on-tertiary-fixed-variant": "#004f4f",
+                        "on-surface-variant": "#c4c9ac",
+                        "error": "#ffb4ab",
+                        "secondary-fixed": "#ffd7f5",
+                        "primary-fixed-dim": "#abd600",
+                        "inverse-on-surface": "#313030",
+                        "on-secondary": "#5b005b",
+                        "secondary": "#ffabf3",
+                        "secondary-fixed-dim": "#ffabf3",
+                        "primary-fixed": "#c3f400",
+                        "surface-container": "#201f1f",
+                        "tertiary": "#ffffff",
+                        "surface-container-highest": "#353534",
+                        "background": "#131313",
+                        "on-primary-fixed-variant": "#3c4d00",
+                        "tertiary-fixed-dim": "#00dddd",
+                        "secondary-container": "#fe00fe",
+                        "on-secondary-fixed": "#380038",
+                        "inverse-surface": "#e5e2e1",
+                        "outline-variant": "#444933",
+                        "on-error": "#690005",
+                        "surface-container-low": "#1c1b1b",
+                        "primary-container": "#c3f400",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-tertiary-fixed": "#002020",
+                        "on-background": "#e5e2e1",
+                        "surface-container-high": "#2a2a2a",
+                        "on-secondary-container": "#500050",
+                        "on-error-container": "#ffdad6",
+                        "on-tertiary-container": "#007070",
+                        "surface-bright": "#3a3939",
+                        "on-primary-fixed": "#161e00",
+                        "error-container": "#93000a",
+                        "outline": "#8e9379",
+                        "on-primary": "#283500",
+                        "tertiary-fixed": "#00fbfb",
+                        "on-tertiary": "#003737",
+                        "surface-dim": "#131313"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "gutter": "16px",
+                        "container-padding": "20px",
+                        "section-gap": "120px",
+                        "element-gap": "24px"
+                    },
+                    "fontFamily": {
+                        "label-mono": ["JetBrains Mono"],
+                        "headline-lg-mobile": ["Anton"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "body-md": ["Hanken Grotesk"],
+                        "headline-xl": ["Anton"],
+                        "headline-lg": ["Anton"]
+                    },
+                    "fontSize": {
+                        "label-mono": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                        "headline-lg-mobile": ["36px", {"lineHeight": "36px", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-xl": ["72px", {"lineHeight": "72px", "letterSpacing": "0.02em", "fontWeight": "400"}],
+                        "headline-lg": ["48px", {"lineHeight": "48px", "letterSpacing": "0.02em", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-background/80 dark:bg-background/80 backdrop-blur-xl border-b border-white/10 shadow-[0_4px_20px_rgba(0,0,0,0.5)] flex justify-between items-center px-container-padding h-16 w-full">
+<div class="flex items-center gap-4">
+<button class="active:scale-95 transition-transform text-on-surface-variant hover:text-primary-fixed transition-colors duration-300">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<a href="/index.html"><h1 class="font-headline-lg-mobile text-headline-lg-mobile tracking-tighter text-primary-fixed drop-shadow-[0_0_8px_rgba(195,244,0,0.6)]">GORÓ DA MANSÃO</h1></a>
+</div>
+<div class="flex items-center gap-6">
+<button class="active:scale-95 transition-transform text-primary-fixed hover:text-primary-fixed transition-colors duration-300 relative">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="absolute -top-2 -right-2 bg-secondary-container text-on-secondary-container text-[10px] px-1.5 rounded-full font-bold">3</span>
+</button>
+</div>
+</header>
+
+<main class="pt-24 pb-32 px-container-padding max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10">
+    <!-- Cart Items Section -->
+    <section class="lg:col-span-8 space-y-8" id="goro-cart-items">
+        <div class="flex items-end justify-between border-b border-outline-variant pb-4">
+            <h2 class="font-headline-lg text-headline-lg text-primary-fixed uppercase tracking-tight">Seu Pack</h2>
+            <span class="font-label-mono text-label-mono text-on-surface-variant" id="goro-cart-count">0 ITENS NO TOTAL</span>
+        </div>
+        <div id="goro-cart-list">
+            <!-- Items renderizados dinamicamente -->
+        </div>
+        <div id="goro-cart-empty" class="hidden text-center py-20">
+            <span class="material-symbols-outlined text-[80px] text-on-surface-variant/20 mb-4">shopping_cart</span>
+            <h3 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface-variant/40 uppercase mb-4">Seu pack está vazio</h3>
+            <p class="font-body-md text-on-surface-variant/40 mb-8">Adicione produtos do Arsenal da Mansão para começar.</p>
+            <a href="/loja.html" class="bg-primary-fixed text-on-primary-fixed font-headline-lg-mobile text-[18px] px-10 py-4 uppercase active:scale-95 transition-transform inline-block">
+                Explorar Arsenal
+            </a>
+        </div>
+    </section>
+    <!-- Summary -->
+    <aside class="lg:col-span-4 space-y-8" id="goro-cart-summary-wrap">
+        <div class="glass-card p-8 space-y-6">
+            <h3 class="font-headline-lg-mobile text-[28px] text-primary uppercase border-b border-outline-variant pb-4">Resumo</h3>
+            <div class="space-y-3 font-body-md">
+                <div class="flex justify-between">
+                    <span class="text-on-surface-variant">Subtotal</span>
+                    <span class="font-label-mono" id="goro-subtotal">R$ 0,00</span>
+                </div>
+                <div class="flex justify-between items-center">
+                    <span class="text-on-surface-variant">Frete</span>
+                    <span class="font-label-mono" id="goro-frete">R$ 0,00</span>
+                </div>
+                <div class="flex justify-between pt-4 border-t border-outline-variant">
+                    <span class="font-headline-lg-mobile text-[24px] text-primary">TOTAL</span>
+                    <span class="font-headline-lg-mobile text-[24px] text-primary-fixed" id="goro-total">R$ 0,00</span>
+                </div>
+            </div>
+            <div class="space-y-4">
+                <button onclick="window.location.href='/checkout.html'" class="w-full bg-primary-fixed text-on-primary-fixed font-headline-lg-mobile text-[24px] py-4 rounded-lg neon-glow-primary active:scale-95 transition-all hover:brightness-110" id="goro-checkout-btn" style="background-color: #abd600; color: black; font-weight: bold;">
+                    FINALIZAR COMPRA
+                </button>
+                <a href="/loja.html" class="w-full border border-outline text-on-surface-variant font-label-mono py-2 hover:bg-white/5 transition-colors text-center block">
+                    CONTINUAR COMPRANDO
+                </a>
+            </div>
+        </div>
+    </aside>
+</main>
+<script>
+function formatBRL(val) {
+    return 'R$ ' + val.toFixed(2).replace('.', ',');
+}
+
+function renderCarrinho() {
+    const cart = getCart();
+    const listEl = document.getElementById('goro-cart-list');
+    const emptyEl = document.getElementById('goro-cart-empty');
+    const countEl = document.getElementById('goro-cart-count');
+    const summaryWrap = document.getElementById('goro-cart-summary-wrap');
+
+    if (!cart || cart.length === 0) {
+        listEl.innerHTML = '';
+        emptyEl.classList.remove('hidden');
+        summaryWrap.style.display = 'none';
+        countEl.textContent = '0 ITENS NO TOTAL';
+        return;
+    }
+
+    emptyEl.classList.add('hidden');
+    summaryWrap.style.display = '';
+    const totalQtd = cart.reduce((a, i) => a + i.quantidade, 0);
+    countEl.textContent = totalQtd + ' ITENS NO TOTAL';
+
+    listEl.innerHTML = cart.map(item => `
+        <div class="glass-card p-6 flex flex-col md:flex-row gap-6 relative overflow-hidden group mb-4">
+            <div class="w-full md:w-32 h-32 bg-surface-container rounded-lg flex items-center justify-center shrink-0">
+                <img alt="${item.nome}" class="w-full h-full object-contain p-2" src="${item.imagem}"/>
+            </div>
+            <div class="flex-grow space-y-2">
+                <div class="flex justify-between items-start">
+                    <div>
+                        <h3 class="font-headline-lg-mobile text-headline-lg-mobile text-primary leading-tight">${item.nome.toUpperCase()}</h3>
+                        <p class="font-body-md text-body-md text-on-surface-variant">${item.subtitulo}</p>
+                    </div>
+                    <button onclick="removerDoCarrinho('${item.id}')" class="text-on-surface-variant hover:text-error transition-colors">
+                        <span class="material-symbols-outlined">delete</span>
+                    </button>
+                </div>
+                <div class="flex justify-between items-center pt-4">
+                    <div class="flex items-center gap-4 bg-surface-container-highest/50 rounded-full px-4 py-1">
+                        <button onclick="atualizarQuantidade('${item.id}', -1)" class="hover:text-primary-fixed text-lg font-bold">−</button>
+                        <span class="font-label-mono w-6 text-center">${String(item.quantidade).padStart(2, '0')}</span>
+                        <button onclick="atualizarQuantidade('${item.id}', 1)" class="hover:text-primary-fixed text-lg font-bold">+</button>
+                    </div>
+                    <p class="font-label-mono text-body-lg text-primary-fixed">${formatBRL(item.preco * item.quantidade)}</p>
+                </div>
+            </div>
+        </div>
+    `).join('');
+
+    const totals = getCartTotals();
+    document.getElementById('goro-subtotal').textContent = formatBRL(totals.subtotal);
+    document.getElementById('goro-frete').innerHTML = totals.frete === 0
+        ? '<span class="bg-primary-fixed/20 text-primary-fixed px-2 py-0.5 rounded text-xs font-bold font-label-mono">GRÁTIS ELITE</span>'
+        : formatBRL(totals.frete);
+    document.getElementById('goro-total').textContent = formatBRL(totals.total);
+}
+
+document.addEventListener('DOMContentLoaded', renderCarrinho);
+window.addEventListener('goro_cart_updated', renderCarrinho);
+</script>
+
+<!-- NavigationDrawer (Mobile Focus/Hidden) -->
+<div class="fixed inset-0 bg-black/60 backdrop-blur-sm z-[100] hidden" id="drawer">
+<div class="h-full w-80 bg-surface-container-low flex flex-col py-8 shadow-2xl translate-x-[-100%] transition-transform duration-300">
+<div class="px-6 mb-10 flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center font-bold text-on-primary-fixed">EM</div>
+<div>
+<p class="font-headline-lg-mobile text-[18px] text-primary leading-none">ELITE MEMBER</p>
+<p class="font-label-mono text-[10px] text-primary-fixed">Harm Reduction Tier 1</p>
+</div>
+</div>
+<nav class="flex-grow space-y-1">
+<a class="flex items-center gap-4 text-on-surface px-4 py-3 hover:bg-white/5 transition-all" href="#">
+<span class="material-symbols-outlined">grade</span> Limited Drops
+                </a>
+<a class="flex items-center gap-4 text-on-surface px-4 py-3 hover:bg-white/5 transition-all" href="#">
+<span class="material-symbols-outlined">verified_user</span> Harm Reduction
+                </a>
+<a class="flex items-center gap-4 bg-primary-container text-on-primary-container rounded-full mx-2 px-4 py-3" href="#">
+<span class="material-symbols-outlined">fitness_center</span> Mansão Maromba
+                </a>
+<a class="flex items-center gap-4 text-on-surface px-4 py-3 hover:bg-white/5 transition-all" href="#">
+<span class="material-symbols-outlined">science</span> The Lab
+                </a>
+<a class="flex items-center gap-4 text-on-surface px-4 py-3 hover:bg-white/5 transition-all" href="#">
+<span class="material-symbols-outlined">support_agent</span> Support
+                </a>
+</nav>
+<div class="px-6 pt-6 border-t border-outline-variant">
+<p class="font-label-mono text-on-surface-variant text-xs">Goró Points: 420</p>
+</div>
+</div>
+</div>
+<!-- BottomNavBar -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 rounded-t-xl bg-surface-container-lowest/90 backdrop-blur-2xl border-t border-primary/20 shadow-[0_-4px_20px_rgba(195,244,0,0.15)] flex justify-around items-center h-20 pb-safe px-4">
+<div class="flex flex-col items-center justify-center text-primary-fixed font-bold scale-110 active:scale-90 transition-all duration-200 cursor-pointer">
+<span class="material-symbols-outlined">bolt</span>
+<span class="font-label-mono text-label-mono">Shop</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant/60 hover:text-primary-fixed/80 active:scale-90 transition-all duration-200 cursor-pointer">
+<span class="material-symbols-outlined">local_bar</span>
+<span class="font-label-mono text-label-mono">Glow</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant/60 hover:text-primary-fixed/80 active:scale-90 transition-all duration-200 cursor-pointer">
+<span class="material-symbols-outlined">layers</span>
+<span class="font-label-mono text-label-mono">Stacks</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant/60 hover:text-primary-fixed/80 active:scale-90 transition-all duration-200 cursor-pointer">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-mono text-label-mono">Account</span>
+</div>
+</nav>
+<!-- Footer -->
+<footer class="w-full bg-surface-container-lowest border-t border-outline-variant mt-20">
+<div class="flex flex-col md:flex-row justify-between items-start p-container-padding gap-8 max-w-7xl mx-auto">
+<div class="space-y-4">
+<h2 class="font-headline-lg text-headline-lg text-primary-fixed">GORÓ DA MANSÃO</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xs">A elite da performance noturna e recuperação avançada. Junte-se à Mansão.</p>
+</div>
+<div class="grid grid-cols-2 gap-x-12 gap-y-4">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary-fixed transition-colors" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary-fixed transition-colors" href="#">Terms of Service</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary-fixed transition-colors" href="#">Harm Reduction Guide</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary-fixed transition-colors" href="#">Mansão Maromba HQ</a>
+</div>
+<div class="pt-8 md:pt-0">
+<p class="font-label-mono text-xs text-on-surface-variant opacity-60">© 2024 GORÓ DA MANSÃO. DRINK RESPONSIBLY.</p>
+</div>
+</div>
+</footer>
+<script>
+        // Simple micro-interactions
+        const menuBtn = document.querySelector('header button span[data-icon="menu"]'); // Note: JSON says data-icon but using hardcoded here for flow
+        // Just selecting the first button for simulation
+        const drawerBtn = document.querySelector('header button:first-child');
+        const drawer = document.getElementById('drawer');
+        const drawerContent = drawer.querySelector('div');
+
+        drawerBtn.addEventListener('click', () => {
+            drawer.classList.remove('hidden');
+            setTimeout(() => {
+                drawerContent.style.transform = 'translateX(0)';
+            }, 10);
+        });
+
+        drawer.addEventListener('click', (e) => {
+            if (e.target === drawer) {
+                drawerContent.style.transform = 'translateX(-100%)';
+                setTimeout(() => {
+                    drawer.classList.add('hidden');
+                }, 300);
+            }
+        });
+    </script>
+<script src="/js/store.js"></script>
+</body></html>
