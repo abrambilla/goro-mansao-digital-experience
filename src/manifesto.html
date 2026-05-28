@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-br"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Harm Reduction &amp; Manifesto | GORÓ DA MANSÃO</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Hanken+Grotesk:wght@300;400;700&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Config Verbatim -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary": "#003737",
+                    "on-background": "#e5e2e1",
+                    "outline": "#8e9379",
+                    "tertiary-fixed-dim": "#00dddd",
+                    "on-primary-fixed": "#161e00",
+                    "on-secondary": "#5b005b",
+                    "surface-container-low": "#1c1b1b",
+                    "on-tertiary-fixed": "#002020",
+                    "primary": "#ffffff",
+                    "outline-variant": "#444933",
+                    "background": "#131313",
+                    "error": "#ffb4ab",
+                    "on-tertiary-container": "#007070",
+                    "surface-bright": "#3a3939",
+                    "tertiary-container": "#00fbfb",
+                    "secondary": "#ffabf3",
+                    "primary-fixed": "#c3f400",
+                    "surface-variant": "#353534",
+                    "on-surface": "#e5e2e1",
+                    "inverse-primary": "#506600",
+                    "surface-dim": "#131313",
+                    "tertiary-fixed": "#00fbfb",
+                    "inverse-surface": "#e5e2e1",
+                    "error-container": "#93000a",
+                    "primary-container": "#c3f400",
+                    "on-surface-variant": "#c4c9ac",
+                    "surface": "#131313",
+                    "on-error": "#690005",
+                    "surface-tint": "#abd600",
+                    "on-primary-container": "#556d00",
+                    "on-primary-fixed-variant": "#3c4d00",
+                    "secondary-fixed-dim": "#ffabf3",
+                    "secondary-fixed": "#ffd7f5",
+                    "on-secondary-container": "#500050",
+                    "secondary-container": "#fe00fe",
+                    "primary-fixed-dim": "#abd600",
+                    "on-primary": "#283500",
+                    "surface-container": "#201f1f",
+                    "inverse-on-surface": "#313030",
+                    "on-error-container": "#ffdad6",
+                    "surface-container-highest": "#353534",
+                    "tertiary": "#ffffff",
+                    "on-tertiary-fixed-variant": "#004f4f",
+                    "on-secondary-fixed": "#380038",
+                    "surface-container-high": "#2a2a2a",
+                    "surface-container-lowest": "#0e0e0e",
+                    "on-secondary-fixed-variant": "#810081"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "gutter": "16px",
+                    "section-gap": "120px",
+                    "element-gap": "24px",
+                    "container-padding": "20px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Anton"],
+                    "headline-lg-mobile": ["Anton"],
+                    "label-mono": ["JetBrains Mono"],
+                    "body-md": ["Hanken Grotesk"],
+                    "body-lg": ["Hanken Grotesk"],
+                    "headline-xl": ["Anton"]
+            },
+            "fontSize": {
+                    "headline-lg": ["48px", {"lineHeight": "48px", "letterSpacing": "0.02em", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["36px", {"lineHeight": "36px", "fontWeight": "400"}],
+                    "label-mono": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-xl": ["72px", {"lineHeight": "72px", "letterSpacing": "0.02em", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #131313;
+            color: #e5e2e1;
+            overflow-x: hidden;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-left: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .neon-glow-lime {
+            box-shadow: 0 0 20px rgba(195, 244, 0, 0.2);
+        }
+        .neon-glow-cyan {
+            box-shadow: 0 0 20px rgba(0, 251, 251, 0.2);
+        }
+        .text-glow {
+            text-shadow: 0 0 10px rgba(195, 244, 0, 0.4);
+        }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body-md selection:bg-primary-fixed selection:text-black">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-background/80 dark:bg-background/80 backdrop-blur-xl border-b border-white/10 shadow-[0_4px_20px_rgba(0,0,0,0.5)] flex justify-between items-center px-container-padding h-16">
+<div class="flex items-center gap-4">
+<button class="active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-primary">menu</span>
+</button>
+<span class="font-headline-lg-mobile text-headline-lg-mobile tracking-tighter text-primary-fixed drop-shadow-[0_0_8px_rgba(195,244,0,0.6)]">GORÓ DA MANSÃO</span>
+</div>
+<div class="flex items-center gap-6">
+<span class="hidden md:block font-label-mono text-primary-fixed">GLOW</span>
+<button class="active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-primary">shopping_cart</span>
+</button>
+</div>
+</header>
+<main class="pt-16 pb-32">
+<!-- Hero: The Manifesto Intro -->
+<section class="relative min-h-[795px] flex flex-col items-center justify-center text-center px-container-padding overflow-hidden">
+<div class="absolute inset-0 z-0 opacity-40">
+<div class="absolute top-1/4 left-1/4 w-96 h-96 bg-primary-fixed/20 blur-[120px] rounded-full"></div>
+<div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary-container/20 blur-[120px] rounded-full"></div>
+</div>
+<div class="relative z-10 max-w-4xl mx-auto space-y-element-gap">
+<span class="font-label-mono text-primary-fixed tracking-[0.3em] block uppercase" data-aos="fade-up">Harm Reduction Tier 1</span>
+<h1 class="font-headline-xl text-headline-xl text-primary leading-tight">POR QUE O <span class="text-primary-fixed text-glow">GORÓ</span>?</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+                    Não é apenas sobre o que bebemos, é sobre como vivemos. Na Mansão Maromba, performance é inegociável. Por que arruinar seu shape com açúcares e corantes artificiais?
+                </p>
+<div class="flex flex-col md:flex-row gap-4 justify-center pt-8">
+<button class="bg-primary-fixed text-on-primary-fixed font-headline-lg px-8 py-4 hover:scale-105 active:scale-95 transition-all shadow-[0_0_20px_rgba(195,244,0,0.4)]">
+                        BEBA COM INTELIGÊNCIA
+                    </button>
+<button class="border border-outline text-primary font-headline-lg px-8 py-4 hover:bg-white/5 transition-all">
+                        EXPLORE THE LAB
+                    </button>
+</div>
+</div>
+<div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+<span class="material-symbols-outlined text-primary-fixed">arrow_downward</span>
+</div>
+</section>
+<!-- The Lab: Comparative Analysis -->
+<section class="py-section-gap px-container-padding bg-surface-container-low relative">
+<div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="space-y-8">
+<h2 class="font-headline-lg text-headline-lg text-primary">TRADICIONAL VS <span class="text-primary-fixed italic">ELITE</span></h2>
+<div class="space-y-6">
+<div class="glass-card p-6 rounded-xl flex items-start gap-4 border-l-4 border-error">
+<span class="material-symbols-outlined text-error" style="font-variation-settings: 'FILL' 1;">dangerous</span>
+<div>
+<h3 class="font-headline-lg text-[24px] text-on-surface">ENERGY DRINK COMUM</h3>
+<p class="text-on-surface-variant opacity-70">Açúcar refinado, taurina sintética em excesso e picos de insulina que sabotam sua cetose e seu foco.</p>
+</div>
+</div>
+<div class="glass-card p-6 rounded-xl flex items-start gap-4 border-l-4 border-primary-fixed neon-glow-lime">
+<span class="material-symbols-outlined text-primary-fixed" style="font-variation-settings: 'FILL' 1;">bolt</span>
+<div>
+<h3 class="font-headline-lg text-[24px] text-primary-fixed">GORÓ DA MANSÃO</h3>
+<p class="text-on-surface-variant">Extratos botânicos puros, zero adição de açúcares, e micronutrientes que apoiam a recuperação em vez de drená-la.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="relative group">
+<div class="absolute -inset-4 bg-primary-fixed/10 blur-3xl group-hover:bg-primary-fixed/20 transition-all duration-500 rounded-full"></div>
+<img alt="Laboratory Aesthetic" class="relative z-10 w-full aspect-square object-cover rounded-2xl grayscale contrast-125" data-alt="A high-tech laboratory setting with dramatic green and white accent lighting. Close-up of scientific glassware and biometric monitoring displays on screens. The aesthetic is ultra-modern, dark, and professional, reflecting a sophisticated medical or performance-enhancing research facility. Polished metal surfaces and subtle vapor create a clean, clinical yet energetic atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAeNqICIEDNce7kaAp8P_3kXaw9NRhTE_mdh9xlYE5RQ6xqaKp8mdXG-ukPV5rUxEOZBrvFRcUJcYDwPXriFbZFNgW-QvkibMjsg9T42sObsla6nsJljHyxWZ9ulruSr4xC3PQFcYOwhrxHdC14-a6s_1O-mSaKNC9aR0vayVNReKkdTualdxj4nRH4XgvQnzwxo7Clsf5LHin33QityjDb541ppOTyenFvIGo9jt8y5o4PX_ib_gicn5O0Q2mmk4R8KaYRFoU8AO4"/>
+</div>
+</div>
+</section>
+<!-- Interactive: Myth vs Fact Accordion -->
+<section class="py-section-gap px-container-padding max-w-4xl mx-auto">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary uppercase">Mito vs Realidade</h2>
+<p class="font-label-mono text-on-surface-variant">THE HARM REDUCTION PROTOCOL</p>
+</div>
+<div class="space-y-4">
+<!-- Accordion Item 1 -->
+<div class="glass-card rounded-xl overflow-hidden border border-white/5 transition-all duration-300" x-data="{ open: false }">
+<button @click="open = !open" class="w-full p-6 text-left flex justify-between items-center group">
+<span class="font-headline-lg text-2xl text-on-surface group-hover:text-primary-fixed transition-colors">"Energéticos são essenciais para o treino"</span>
+<span :class="open ? 'rotate-180' : ''" class="material-symbols-outlined text-primary-fixed transition-transform duration-300">expand_more</span>
+</button>
+<div class="p-6 pt-0 text-on-surface-variant border-t border-white/5 bg-white/2" x-collapse="" x-show="open">
+<p class="font-body-lg">
+<strong class="text-primary-fixed">REALIDADE:</strong> O excesso de estimulantes artificiais causa taquicardia e fadiga adrenal. O Goró utiliza adaptações botânicas que fornecem clareza mental sem o "crash" pós-treino.
+                        </p>
+</div>
+</div>
+<!-- Accordion Item 2 -->
+<div class="glass-card rounded-xl overflow-hidden border border-white/5 transition-all duration-300" x-data="{ open: false }">
+<button @click="open = !open" class="w-full p-6 text-left flex justify-between items-center group">
+<span class="font-headline-lg text-2xl text-on-surface group-hover:text-primary-fixed transition-colors">"Bebidas funcionais não podem ser saborosas"</span>
+<span :class="open ? 'rotate-180' : ''" class="material-symbols-outlined text-primary-fixed transition-transform duration-300">expand_more</span>
+</button>
+<div class="p-6 pt-0 text-on-surface-variant border-t border-white/5 bg-white/2" x-collapse="" x-show="open">
+<p class="font-body-lg">
+<strong class="text-primary-fixed">REALIDADE:</strong> Nossa mixologia botânica utiliza frutas reais e infusões herbais de alta qualidade, provando que o luxo e a saúde podem (e devem) coexistir no mesmo copo.
+                        </p>
+</div>
+</div>
+<!-- Accordion Item 3 -->
+<div class="glass-card rounded-xl overflow-hidden border border-white/5 transition-all duration-300" x-data="{ open: false }">
+<button @click="open = !open" class="w-full p-6 text-left flex justify-between items-center group">
+<span class="font-headline-lg text-2xl text-on-surface group-hover:text-primary-fixed transition-colors">"Socializar sem álcool é impossível"</span>
+<span :class="open ? 'rotate-180' : ''" class="material-symbols-outlined text-primary-fixed transition-transform duration-300">expand_more</span>
+</button>
+<div class="p-6 pt-0 text-on-surface-variant border-t border-white/5 bg-white/2" x-collapse="" x-show="open">
+<p class="font-body-lg">
+<strong class="text-primary-fixed">REALIDADE:</strong> O Goró foi desenhado para ser uma experiência social premium. Com "Herbal Nervines", você relaxa o sistema nervoso e mantém a sociabilidade sem comprometer sua manhã seguinte.
+                        </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive Stats Section -->
+<section class="py-section-gap px-container-padding">
+<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="glass-card p-10 rounded-2xl text-center space-y-4 group hover:border-primary-fixed transition-all duration-500">
+<div class="w-16 h-16 bg-primary-fixed/10 rounded-full flex items-center justify-center mx-auto mb-6">
+<span class="material-symbols-outlined text-primary-fixed text-4xl" data-weight="fill">verified_user</span>
+</div>
+<h3 class="font-headline-lg text-3xl">PUREZA</h3>
+<div class="h-2 w-full bg-white/10 rounded-full overflow-hidden">
+<div class="h-full bg-primary-fixed w-[98%] shadow-[0_0_10px_rgba(195,244,0,0.5)]"></div>
+</div>
+<p class="font-label-mono text-on-surface-variant">98% BIO-DISPONÍVEL</p>
+</div>
+<div class="glass-card p-10 rounded-2xl text-center space-y-4 group hover:border-tertiary-fixed transition-all duration-500">
+<div class="w-16 h-16 bg-tertiary-fixed/10 rounded-full flex items-center justify-center mx-auto mb-6">
+<span class="material-symbols-outlined text-tertiary-fixed text-4xl" data-weight="fill">science</span>
+</div>
+<h3 class="font-headline-lg text-3xl">CIÊNCIA</h3>
+<div class="h-2 w-full bg-white/10 rounded-full overflow-hidden">
+<div class="h-full bg-tertiary-fixed w-[100%] shadow-[0_0_10px_rgba(0,251,251,0.5)]"></div>
+</div>
+<p class="font-label-mono text-on-surface-variant">LAB-TESTED FORMULA</p>
+</div>
+<div class="glass-card p-10 rounded-2xl text-center space-y-4 group hover:border-secondary-container transition-all duration-500">
+<div class="w-16 h-16 bg-secondary-container/10 rounded-full flex items-center justify-center mx-auto mb-6">
+<span class="material-symbols-outlined text-secondary-container text-4xl" data-weight="fill">fitness_center</span>
+</div>
+<h3 class="font-headline-lg text-3xl">SHAPE</h3>
+<div class="h-2 w-full bg-white/10 rounded-full overflow-hidden">
+<div class="h-full bg-secondary-container w-[100%] shadow-[0_0_10px_rgba(254,0,254,0.5)]"></div>
+</div>
+<p class="font-label-mono text-on-surface-variant">0% EMPTY CALORIES</p>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="py-section-gap px-container-padding text-center relative">
+<div class="absolute inset-0 z-0 bg-gradient-to-b from-transparent to-primary-fixed/5"></div>
+<div class="relative z-10 max-w-2xl mx-auto space-y-8">
+<h2 class="font-headline-lg text-headline-lg">PRONTO PARA A EVOLUÇÃO?</h2>
+<p class="text-on-surface-variant font-body-lg">
+                    A saúde não precisa ser chata. A Mansão Maromba te dá as ferramentas, o Goró te dá o ritual.
+                </p>
+<a class="inline-block bg-primary-fixed text-on-primary-fixed font-headline-lg text-3xl px-12 py-6 rounded-full hover:scale-110 active:scale-95 transition-all duration-300 shadow-[0_0_40px_rgba(195,244,0,0.3)]" href="#">
+                    BEBA COM INTELIGÊNCIA
+                </a>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 rounded-t-xl bg-surface-container-lowest/90 backdrop-blur-2xl border-t border-primary/20 shadow-[0_-4px_20px_rgba(195,244,0,0.15)] flex justify-around items-center h-20 pb-safe px-4">
+<a class="flex flex-col items-center justify-center text-on-surface-variant/60 hover:text-primary-fixed/80 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">bolt</span>
+<span class="font-label-mono text-label-mono">Shop</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary-fixed font-bold scale-110 active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">local_bar</span>
+<span class="font-label-mono text-label-mono">Glow</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant/60 hover:text-primary-fixed/80 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">layers</span>
+<span class="font-label-mono text-label-mono">Stacks</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant/60 hover:text-primary-fixed/80 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-mono text-label-mono">Account</span>
+</a>
+</nav>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest border-t border-outline-variant w-full">
+<div class="flex flex-col md:flex-row justify-between items-start p-container-padding gap-8 max-w-7xl mx-auto">
+<div class="space-y-4">
+<span class="font-headline-lg text-headline-lg text-primary-fixed">GORÓ DA MANSÃO</span>
+<p class="font-body-md text-on-surface-variant max-w-xs">Elite nutrition for the bold and the relentless. Engineered in the Lab, tested in the Mansão.</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-8 w-full md:w-auto">
+<div class="space-y-4">
+<h4 class="font-label-mono text-primary-fixed uppercase tracking-widest">Company</h4>
+<ul class="space-y-2 text-on-surface-variant font-body-md">
+<li class="hover:text-secondary-fixed transition-colors cursor-pointer">About Us</li>
+<li class="hover:text-secondary-fixed transition-colors cursor-pointer">The Lab</li>
+<li class="hover:text-secondary-fixed transition-colors cursor-pointer">Manifesto</li>
+</ul>
+</div>
+<div class="space-y-4">
+<h4 class="font-label-mono text-primary-fixed uppercase tracking-widest">Support</h4>
+<ul class="space-y-2 text-on-surface-variant font-body-md">
+<li class="hover:text-secondary-fixed transition-colors cursor-pointer">Privacy Policy</li>
+<li class="hover:text-secondary-fixed transition-colors cursor-pointer">Terms of Service</li>
+<li class="hover:text-secondary-fixed transition-colors cursor-pointer">FAQ</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="p-container-padding text-center border-t border-white/5">
+<p class="font-body-md text-on-surface-variant opacity-50">© 2024 GORÓ DA MANSÃO. DRINK RESPONSIBLY.</p>
+</div>
+</footer>
+<!-- Scripts for simple interactions -->
+<script defer="" src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+<script>
+        // Simple ambient light movement
+        document.addEventListener('mousemove', (e) => {
+            const mouseX = e.clientX / window.innerWidth;
+            const mouseY = e.clientY / window.innerHeight;
+            const glow = document.querySelector('.neon-glow-lime');
+            if(glow) {
+                // Subtle interaction could go here
+            }
+        });
+    </script>
+<script src="/js/store.js"></script>
+</body></html>
